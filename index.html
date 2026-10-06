@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="BAJO PRESIÓN — Rendir al máximo también implica saber cuidarse.">
+<title>BAJO PRESIÓN</title>
+<style>
+:root{
+ --ink:#17211f; --muted:#68736f; --paper:#f7f8f5; --white:#fff;
+ --sage:#d5dfd8; --sage2:#edf2ee; --terracotta:#9f6559; --yellow:#e7dfbd;
+ --line:#dfe5e1; --dark:#20302c;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+a{text-decoration:none;color:inherit} button{font:inherit}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+.nav{position:sticky;top:0;z-index:20;background:rgba(247,248,245,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(223,229,225,.8)}
+.navin{height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;letter-spacing:-.07em;font-size:19px}.links{display:flex;gap:24px;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.links a:hover{color:var(--terracotta)}
+.hero{padding:72px 0 92px;min-height:760px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}.hero .fade:first-child{position:relative;z-index:3;text-align:center;max-width:1050px;margin:0 auto}.hero p{margin-left:auto;margin-right:auto}.hero .cta{box-shadow:0 12px 35px #20302c18}.hero-stage{width:min(100%,1050px);height:300px;margin:35px auto 0;position:relative;border-radius:38px;background:linear-gradient(135deg,#edf2ee 0%,#f7f8f5 58%,#e7dfbd 100%);overflow:hidden;border:1px solid var(--line);cursor:pointer}.hero-stage:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:#d5dfd8;left:50%;top:50%;transform:translate(-50%,-45%);transition:transform .8s cubic-bezier(.2,.8,.2,1)}.hero-stage:hover:before{transform:translate(-50%,-45%) scale(1.08)}.hero-stage:after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:#9f6559;right:12%;bottom:-75px;opacity:.85;transition:transform .8s}.hero-stage:hover:after{transform:translateY(-45px)}.hero-stage .orbtext{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:85%;text-align:center;font-size:clamp(30px,5vw,62px);z-index:3}.hero-stage .float{z-index:4;transition:transform .5s ease}.hero-stage:hover .f1{transform:translate(10px,-5px)}.hero-stage:hover .f2{transform:translate(-8px,7px)}.hero-stage:hover .f3{transform:translate(12px,4px)}.hero-stage:hover .f4{transform:translate(-10px,-8px)}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--terracotta);font-weight:800;margin-bottom:18px}
+h1{font-size:clamp(58px,9vw,118px);line-height:.82;letter-spacing:-.085em;margin:0 0 30px;font-weight:900}
+.hero p{font-size:20px;max-width:650px;color:#4e5b56;margin:0 0 30px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--dark);color:#fff;padding:15px 20px;border-radius:999px;border:0;cursor:pointer}
+.cta:hover{transform:translateY(-2px)}
+.orb{min-height:420px;background:var(--sage2);border-radius:34px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.orb:before{content:"";width:250px;height:250px;border-radius:50%;background:var(--yellow);position:absolute;opacity:.75}
+.orb:after{content:"";width:130px;height:130px;border-radius:50%;background:var(--terracotta);position:absolute;right:14%;bottom:13%;opacity:.8}
+.orbtext{position:relative;z-index:2;width:75%;font-size:clamp(28px,4vw,48px);line-height:.95;letter-spacing:-.05em;font-weight:800}
+.float{position:absolute;background:#fff;padding:9px 13px;border-radius:12px;box-shadow:0 10px 30px #17211f12;font-size:11px;font-weight:800;letter-spacing:.08em}
+.f1{top:12%;left:8%}.f2{top:27%;right:7%}.f3{bottom:19%;left:9%}.f4{bottom:8%;right:14%}
+.section{padding:100px 0}.cream{background:#fff}.dark{background:var(--dark);color:#fff}.dark .muted{color:#b8c4bf}
+.sectionhead{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:42px}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--terracotta);font-weight:800}
+h2{font-size:clamp(42px,6vw,76px);line-height:.94;letter-spacing:-.065em;margin:8px 0 0;max-width:720px}
+.lead{max-width:450px;color:var(--muted)}
+.pressure{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.pressure-wrap{position:relative}.pressure-center{min-height:90px;margin-top:22px;border-radius:22px;background:#17211f;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;font-size:clamp(20px,3vw,32px);letter-spacing:-.04em;font-weight:800;transition:.35s}.pword{position:relative;overflow:hidden}
+.pword{border:1px solid var(--line);background:var(--paper);border-radius:18px;padding:28px 20px;min-height:125px;text-align:left;cursor:pointer;transition:.25s}
+.pword:hover,.pword.active{background:var(--sage2);border-color:var(--sage);transform:translateY(-5px);box-shadow:0 18px 35px #17211f10}.pword.active:after{content:"↗";position:absolute;right:15px;top:13px;color:var(--terracotta);font-size:18px}
+.pword b{display:block;font-size:17px}.pword span{display:block;margin-top:12px;color:var(--muted);font-size:13px}
+.response{margin-top:18px;padding:22px 25px;border-radius:18px;background:var(--sage2);font-size:20px;min-height:74px}
+.ticker{overflow:hidden;border-block:1px solid #33443e;background:#263832;color:#e5eee9;white-space:nowrap}
+.ticker div{padding:15px 0;display:inline-block;animation:scroll 22s linear infinite;font-size:12px;text-transform:uppercase;letter-spacing:.14em}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.testgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:start}
+.quiz{background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px}
+.progress{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin:14px 0 30px}.bar{height:100%;width:0;background:var(--terracotta);transition:.3s}
+.qmeta{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}
+.question{font-size:29px;line-height:1.05;letter-spacing:-.035em;font-weight:800;min-height:125px}
+.answers{display:grid;gap:10px}.answer{padding:15px;border:1px solid var(--line);background:var(--paper);border-radius:13px;text-align:left;cursor:pointer}.answer:hover{border-color:var(--terracotta);background:#fff}
+.result{background:var(--sage2);border-radius:26px;padding:30px;position:sticky;top:95px}.result .score{font-size:62px;font-weight:900;letter-spacing:-.06em}.result h3{font-size:28px;line-height:1;margin:12px 0}.small{font-size:13px;color:var(--muted)}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tool{border:1px solid #40534b;background:#263832;border-radius:20px;padding:25px;cursor:pointer;min-height:150px;transition:.25s}.tool:hover{transform:translateY(-4px);background:#2c4039}.tool h3{margin:0;font-size:23px}.tool p{color:#b8c4bf;font-size:14px;display:none;margin:14px 0 0}.tool.open p{display:block}.tool button{margin-top:18px;background:transparent;color:#fff;border:1px solid #60716a;border-radius:999px;padding:8px 12px;cursor:pointer}
+.identity{background:var(--sage);border-radius:30px;padding:65px}.identity h2{max-width:850px}.identity p{font-size:21px;max-width:680px;color:#34433d}.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:35px}.quote{background:#f7f8f5;border-radius:17px;padding:22px;font-weight:750}
+.environment{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:start}.envcards{display:grid;gap:10px}.env{padding:19px 22px;border:1px solid var(--line);border-radius:15px;background:#fff}.env strong{display:block;font-size:14px}.env em{color:var(--terracotta);font-style:normal}
+.help{background:var(--terracotta);color:#fff}.help .eyebrow{color:#f8e8e3}.help p{font-size:20px;max-width:650px}.help .cta{background:#fff;color:var(--ink);margin-top:12px}
+footer{padding:30px 0;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+.fade{opacity:1;transform:translateY(0);transition:opacity .7s ease,transform .7s ease}.fade.show{opacity:1;transform:none}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:var(--dark);color:#fff;padding:12px 16px;border-radius:999px;font-size:13px;transition:.25s;z-index:50}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){.hero,.testgrid,.environment{grid-template-columns:1fr}.hero{min-height:auto;padding-top:55px}.hero-stage{height:270px}.pressure{grid-template-columns:repeat(2,1fr)}.tools{grid-template-columns:1fr 1fr}.quotes{grid-template-columns:1fr}.result{position:static}.links{display:none}}
+@media(max-width:520px){.wrap{width:min(100% - 28px,1120px)}.hero{padding:50px 0 65px}.hero-stage{height:250px;border-radius:28px}.section{padding:70px 0}.pressure,.tools{grid-template-columns:1fr}.orb{min-height:300px}.identity{padding:35px 25px}.question{font-size:25px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker div{animation:none}.fade{transition:none}}
+
+/* ===== RESPONSIVE / TOUCH ===== */
+html{overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-x:hidden;min-width:0;-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+.hero-stage{touch-action:pan-y}
+@media (max-width:850px){
+  .wrap{width:calc(100% - 32px)}
+  .navin{height:62px}
+  .links{display:flex;gap:0;position:fixed;left:16px;right:16px;top:70px;padding:8px;background:rgba(247,248,245,.98);border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 35px rgba(23,33,31,.10);opacity:0;pointer-events:none;transform:translateY(-8px);transition:.22s;flex-wrap:wrap;justify-content:center}
+  .links.mobile-open{opacity:1;pointer-events:auto;transform:none}
+  .links a{padding:11px 12px;font-size:11px}
+  .menu-btn{display:flex!important;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line);background:#fff;border-radius:50%;cursor:pointer}
+  .hero{padding:52px 0 68px;min-height:0}
+  h1{font-size:clamp(48px,14vw,78px);line-height:.86;margin-bottom:22px}
+  .hero p{font-size:17px;line-height:1.45}
+  .hero-stage{height:min(62vw,290px);min-height:230px;margin-top:28px;border-radius:26px}
+  .hero-stage:before{width:68vw;height:68vw;max-width:360px;max-height:360px}
+  .hero-stage:after{width:115px;height:115px;right:5%;bottom:-48px}
+  .hero-stage .orbtext{width:88%;font-size:clamp(26px,7.5vw,48px)}
+  .float{font-size:9px;padding:7px 9px;border-radius:9px}
+  .f1{top:10%;left:5%}.f2{top:24%;right:4%}.f3{bottom:20%;left:5%}.f4{bottom:8%;right:8%}
+  .section{padding:72px 0}
+  .sectionhead{display:block;margin-bottom:30px}
+  .sectionhead .lead{margin-top:18px}
+  h2{font-size:clamp(40px,11vw,62px)}
+  .pressure{grid-template-columns:1fr 1fr;gap:10px}
+  .pword{min-height:105px;padding:20px 15px;border-radius:15px}
+  .pword b{font-size:15px}.pword span{font-size:12px;margin-top:8px}
+  .pword:hover{transform:none;box-shadow:none}
+  .pword.active{transform:none;box-shadow:0 12px 25px rgba(23,33,31,.08)}
+  .pressure-center{font-size:19px;min-height:88px;margin-top:14px;padding:20px}
+  .testgrid{grid-template-columns:1fr;gap:16px}
+  .quiz,.result{padding:22px;border-radius:20px}
+  .result{position:static}
+  .question{font-size:25px;min-height:0;margin-bottom:22px}
+  .answer{min-height:52px;padding:14px 15px}
+  .tools{grid-template-columns:1fr 1fr;gap:10px}
+  .tool{min-height:135px;padding:20px 16px;border-radius:17px}
+  .tool h3{font-size:20px}
+  .identity{padding:38px 24px;border-radius:24px}
+  .identity p{font-size:18px}
+  .quotes{grid-template-columns:1fr;gap:9px}
+  .environment{grid-template-columns:1fr;gap:28px}
+  .help p{font-size:18px}
+}
+@media (max-width:520px){
+  .wrap{width:calc(100% - 24px)}
+  .hero{padding-top:42px}
+  .kicker{font-size:10px;letter-spacing:.13em}
+  .hero-stage{height:255px;min-height:255px}
+  .hero-stage .orbtext{font-size:31px}
+  .float{letter-spacing:.05em}
+  .section{padding:58px 0}
+  .pressure{grid-template-columns:1fr 1fr}
+  .pword{min-height:94px;padding:17px 12px}
+  .pword b{font-size:14px}
+  .pword span{font-size:11px}
+  .tools{grid-template-columns:1fr}
+  .tool{min-height:105px}
+  .tool p{font-size:13px}
+  .cta{padding:14px 17px;font-size:14px}
+}
+@media (min-width:851px){.menu-btn{display:none!important}}
+@media (hover:none){
+  .hero-stage:hover:before{transform:translate(-50%,-45%)}
+  .hero-stage:hover:after{transform:none}
+  .hero-stage .float{transition:transform .35s ease}
+}
+@supports (-webkit-touch-callout:none){
+  .hero{min-height:-webkit-fill-available}
+  .nav{backdrop-filter:none;background:rgba(247,248,245,.97)}
+}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap navin"><a class="logo" href="#">BAJO PRESIÓN</a><button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button><nav class="links"><a href="#presion">Presión</a><a href="#test">Autochequeo</a><a href="#herramientas">Herramientas</a><a href="#ayuda">Ayuda</a></nav></div></header>
+
+<main>
+<section class="wrap hero">
+<div class="fade"><div class="kicker">BAJO PRESIÓN · Espacio de autocuidado</div><h1>¿ESTÁS BIEN<br><span style="color:#9f6559">O SOLO AGUANTANDO?</span></h1><p>La presión forma parte del deporte. Aprender a reconocerla y gestionarla también forma parte del entrenamiento.</p><a class="cta" href="#test">Quiero saber cómo estoy <span>↓</span></a></div>
+<div class="hero-stage fade" aria-label="Composición interactiva sobre la presión"><span class="float f1">GANA</span><span class="float f2">NO FALLES</span><span class="float f3">AGUANTA</span><span class="float f4">DEMUESTRA</span><div class="orbtext">Todos ven lo que rindes.<br><span style="color:#9f6559">¿Quién ve cómo estás?</span></div></div>
+</section>
+
+<section class="section cream" id="presion"><div class="wrap">
+<div class="sectionhead fade"><div><div class="eyebrow">01 · La presión que no se ve</div><h2>Hay presiones que nadie ve.</h2></div><p class="lead">Pasa el cursor o toca una palabra. La campaña convierte esas exigencias en algo visible para poder reconocerlas.</p></div>
+<div class="pressure fade">
+<button class="pword" data-key="GANA"><b>GANA</b><span>Presión por ganar</span></button>
+<button class="pword" data-key="NO FALLES"><b>NO FALLES</b><span>Miedo al error</span></button>
+<button class="pword" data-key="MEJORA"><b>MEJORA</b><span>Exigencia constante</span></button>
+<button class="pword" data-key="AGUANTA"><b>AGUANTA</b><span>Ocultar el malestar</span></button>
+<button class="pword" data-key="DEMUESTRA"><b>DEMUESTRA</b><span>Presión interna</span></button>
+<button class="pword" data-key="RECUPÉRATE"><b>RECUPÉRATE</b><span>Volver cuanto antes</span></button>
+<button class="pword" data-key="RINDE"><b>RINDE</b><span>Expectativas externas</span></button>
+<button class="pword" data-key="NO PUEDES PARAR"><b>NO PUEDES PARAR</b><span>Culpa por descansar</span></button>
+</div><div class="pressure-center" id="response">Toca una palabra para hacer visible una presión.</div>
+</div></section>
+
+<div class="ticker"><div>BAJO PRESIÓN · RENDIR AL MÁXIMO TAMBIÉN IMPLICA SABER CUIDARSE · NO ERES TU RESULTADO · DESCANSAR TAMBIÉN ES ENTRENAR · &nbsp; BAJO PRESIÓN · RENDIR AL MÁXIMO TAMBIÉN IMPLICA SABER CUIDARSE ·</div></div>
+
+<section class="section" id="test"><div class="wrap">
+<div class="sectionhead fade"><div><div class="eyebrow">02 · Autochequeo orientativo</div><h2>Un momento para escucharte.</h2></div><p class="lead">20 preguntas para observar cómo estás actualmente. Este cuestionario no realiza diagnósticos y no sustituye una valoración profesional.</p></div>
+<div class="testgrid">
+<div class="quiz fade"><div class="qmeta" id="qmeta"></div><div class="progress"><div class="bar" id="bar"></div></div><div class="question" id="question"></div><div class="answers" id="answers"></div></div>
+<aside class="result fade"><div class="small">TU RESULTADO ORIENTATIVO</div><div class="score" id="score">—</div><h3 id="resultTitle">Aquí aparecerá una orientación</h3><p class="small" id="resultText">Responde las preguntas para obtener una orientación general sobre las señales que has marcado.</p><button class="cta" id="restart" style="margin-top:15px">Empezar de nuevo</button><p class="small" style="margin-top:18px">Tus respuestas no te definen.</p></aside>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="identity fade" style="background:#f0eee7"><div class="eyebrow">Antes de continuar</div><h2>No necesitas estar al límite para pedir ayuda.</h2><p>Sentir estrés, frustración o preocupación puede formar parte de la experiencia deportiva. Lo importante es observar si estas sensaciones se mantienen, aumentan o empiezan a afectar al descanso, al disfrute, al rendimiento o a tu vida cotidiana.</p><p style="font-size:15px;color:#68736f;margin-bottom:0">Esta web es un recurso de orientación y prevención. Si necesitas una valoración individual, busca apoyo de un profesional de la psicología.</p></div></div></section><section class="section dark" id="herramientas"><div class="wrap">
+<div class="sectionhead fade"><div><div class="eyebrow">03 · Herramientas</div><h2>Recursos breves para el día a día.</h2></div><p class="lead muted">Elige una herramienta según lo que necesites en este momento. Son recursos sencillos de autocuidado, no sustituyen una intervención profesional.</p></div>
+<div class="tools fade">
+<article class="tool"><h3>RESPIRA</h3><p>Durante un minuto, lleva la atención a la respiración. Haz una inhalación cómoda y una exhalación algo más lenta, sin forzar.</p><button type="button">Abrir</button></article>
+<article class="tool"><h3>PARA</h3><p>Haz una pausa breve y pregúntate: ¿qué necesito ahora mismo?</p><button type="button">Abrir</button></article>
+<article class="tool"><h3>DESCONECTA</h3><p>Reserva momentos en los que no tengas que pensar en marcas, resultados o rendimiento.</p><button type="button">Abrir</button></article>
+<article class="tool"><h3>HABLA</h3><p>Identifica una persona de confianza. No necesitas tenerlo todo claro para empezar a hablar.</p><button type="button">Abrir</button></article>
+<article class="tool"><h3>DESCANSA</h3><p>El descanso no es una pérdida de tiempo: también forma parte del entrenamiento.</p><button type="button">Abrir</button></article>
+<article class="tool"><h3>SEPARA</h3><p>“He tenido un mal resultado” no significa “soy un mal deportista”.</p><button type="button">Abrir</button></article>
+</div></div></section>
+
+<section class="section"><div class="wrap"><div class="identity fade"><div class="eyebrow">04 · Más allá del resultado</div><h2>NO ERES TU RESULTADO.</h2><p>Tu rendimiento es una parte de ti, no toda tu identidad.</p><div class="quotes"><div class="quote">Perder no te convierte en un fracaso.</div><div class="quote">Descansar no significa rendirse.</div><div class="quote">Pedir ayuda no te hace débil.</div></div></div></div></section>
+
+<section class="section cream"><div class="wrap environment"><div class="fade"><div class="eyebrow">05 · Tu entorno</div><h2>Si está bajo presión, no le digas que aguante más.</h2></div><div class="envcards fade"><div class="env"><strong>En lugar de <em>“Venga, tienes que ser fuerte.”</em></strong><span>Pregunta: “¿Cómo estás realmente?”</span></div><div class="env"><strong>En lugar de <em>“Esto es deporte de alto rendimiento.”</em></strong><span>Pregunta: “¿Necesitas hablar?”</span></div><div class="env"><strong>En lugar de <em>“Olvídalo y sigue.”</em></strong><span>Pregunta: “¿Qué puedo hacer para ayudarte?”</span></div><div class="env"><strong>Y si hace falta,</strong><span>“¿Quieres que busquemos ayuda?”</span></div></div></div></section>
+
+<section class="section help" id="ayuda"><div class="wrap fade"><div class="eyebrow">06 · Pedir ayuda</div><h2>HABLAR DE LA PRESIÓN TAMBIÉN ES CUIDARSE.</h2><p>Si varias señales se mantienen en el tiempo, merece la pena pedir apoyo. Puedes hablar con una persona de confianza, tu entorno deportivo o un profesional.</p><a class="cta" href="#test">Volver al autochequeo ↑</a></div></section>
+</main>
+<footer><div class="wrap">BAJO PRESIÓN · Rendir al máximo también implica saber cuidarse.</div></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+const questions=[
+"¿Te cuesta desconectar del deporte cuando termina el entrenamiento?","¿Sientes que tu valor personal depende demasiado de tus resultados?","¿Te preocupa constantemente cometer errores?","¿Te cuesta descansar sin sentir culpa?","¿Has perdido motivación por algo que antes disfrutabas?","¿Te sientes agotado incluso después de descansar?","¿Te cuesta hablar de cómo te encuentras?","¿Sientes que tienes que aparentar que todo está bien?","¿Te cuesta pedir ayuda cuando la necesitas?","¿Sientes que tienes que demostrar continuamente que eres capaz?","¿Te afecta mucho emocionalmente un resultado negativo?","¿Te cuesta disfrutar del deporte como lo hacías antes?","¿Tienes dificultades para dormir o descansar bien?","¿Te notas más irritable o de peor humor de lo habitual?","¿Sientes una preocupación excesiva por tu rendimiento?","¿Una lesión afecta mucho a tu estado de ánimo?","¿Te cuesta recuperarte psicológicamente después de competir?","¿Sientes que la presión de otras personas pesa demasiado sobre ti?","¿Te has sentido aislado o con ganas de alejarte de los demás?","¿Has pensado que tienes que seguir adelante aunque sientas que no puedes más?"
+];
+const answers=["Nunca o casi nunca","A veces","A menudo","Casi siempre"];
+const pressure={
+"GANA":"Hoy tienes que ganar.","NO FALLES":"No puedes equivocarte.","MEJORA":"Siempre tienes que hacerlo mejor.","AGUANTA":"No importa cómo estés. Sigue.","DEMUESTRA":"Tienes que demostrar que eres capaz.","RECUPÉRATE":"Tienes que volver cuanto antes.","RINDE":"Todos esperan más de ti.","NO PUEDES PARAR":"Descansar parece no estar permitido."
+};
+let index=0, values=[];
+const q=document.querySelector("#question"), a=document.querySelector("#answers"), bar=document.querySelector("#bar"), meta=document.querySelector("#qmeta");
+function renderQuiz(){
+ meta.textContent=`Pregunta ${index+1} / ${questions.length}`;
+ q.textContent=questions[index]; bar.style.width=`${(index/questions.length)*100}%`; a.innerHTML="";
+ answers.forEach((label,i)=>{const b=document.createElement("button");b.className="answer";b.type="button";b.textContent=label;b.onclick=()=>{values[index]=i;if(index<questions.length-1){index++;renderQuiz()}else finish()};a.appendChild(b)});
+}
+function finish(){
+ const total=values.reduce((s,v)=>s+v,0), max=questions.length*3, pct=Math.round(total/max*100);
+ bar.style.width="100%"; document.querySelector("#score").textContent=pct+"%";
+ let title,text;
+ if(pct<30){title="Pocas señales señaladas";text="Continúa cuidando el descanso, la desconexión y los espacios en los que puedas hablar de cómo te encuentras."}
+ else if(pct<60){title="Hay algunas señales a las que prestar atención";text="Puede ser útil observar cómo evolucionan estas señales y hablar con alguien de confianza si te están afectando en tu día a día."}
+ else{title="Varias señales merecen atención";text="Si estas señales se mantienen o interfieren en tu bienestar, considera hablar con una persona de confianza o con un profesional."}
+ document.querySelector("#resultTitle").textContent=title;document.querySelector("#resultText").textContent=text;
+}
+document.querySelector("#restart").onclick=()=>{index=0;values=[];document.querySelector("#score").textContent="—";document.querySelector("#resultTitle").textContent="Aquí aparecerá una orientación";document.querySelector("#resultText").textContent="Responde las preguntas para obtener una orientación general sobre las señales que has marcado.";renderQuiz()};
+renderQuiz();
+document.querySelectorAll(".pword").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll(".pword").forEach(x=>x.classList.remove("active"));btn.classList.add("active");document.querySelector("#response").innerHTML="<span style=\"color:#e7dfbd\">“"+pressure[btn.dataset.key]+"”</span>";}));
+document.querySelectorAll(".tool").forEach(card=>card.addEventListener("click",e=>{if(e.target.tagName==="BUTTON"){} card.classList.toggle("open");}));
+const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.12});
+document.querySelectorAll(".fade").forEach(x=>observer.observe(x));
+
+const menuBtn=document.querySelector('#menuBtn'), navLinks=document.querySelector('.links');
+if(menuBtn){
+  menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('mobile-open');menuBtn.setAttribute('aria-expanded',open?'true':'false');menuBtn.textContent=open?'×':'☰';});
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('mobile-open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+}
+// En táctil, la presión seleccionada responde al toque; en escritorio también funciona con click.
+document.querySelectorAll('.pword').forEach(btn=>btn.addEventListener('touchstart',()=>btn.classList.add('active'),{passive:true}));
+</script>
+</body>
+</html>
